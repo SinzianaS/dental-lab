@@ -1,5 +1,8 @@
 package com.dental.lab.data.domain;
 
+import com.dental.lab.data.domain.enums.Color;
+import com.dental.lab.data.domain.enums.Status;
+import com.dental.lab.data.domain.enums.Type;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -16,18 +19,17 @@ public class DentalWork {
     private UUID id;
 
 
-    @ManyToOne
-    @JoinColumn(name = "dental_technician_id")
-    private DentalTechnician dentalTechnician;
-
     @OneToOne
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
+    @Enumerated(EnumType.STRING)
     Status status;
 
+    @Enumerated(EnumType.STRING)
     Type type;
 
+    @Enumerated(EnumType.STRING)
     Color color;
 
 

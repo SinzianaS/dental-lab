@@ -1,4 +1,4 @@
-package com.dental.lab.data.domain;
+package com.dental.lab.data.domain.enums;
 
 public enum Color {
     A1("a1"),
@@ -22,5 +22,10 @@ public enum Color {
     private String color;
     Color(String color){
         this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return color;
     }
 }

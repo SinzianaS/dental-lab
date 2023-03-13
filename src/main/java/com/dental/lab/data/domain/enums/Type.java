@@ -1,4 +1,4 @@
-package com.dental.lab.data.domain;
+package com.dental.lab.data.domain.enums;
 
 public enum Type {
     METAL_CERAMIC("metal ceramic"),
@@ -8,7 +8,12 @@ public enum Type {
 
     private final String type;
 
-    Type(String type){
+    Type(String type) {
         this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return type;
     }
 }

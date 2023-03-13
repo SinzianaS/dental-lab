@@ -22,7 +22,4 @@ public class Patient {
     @OneToOne(cascade = CascadeType.ALL)
     private Dentist dentist;
 
-   // @OneToMany(cascade = CascadeType.ALL)
-//    @JoinColumn(name="patient_id", referencedColumnName = "id", insertable = false)
-//    private DentalWork dentalWork;
 }

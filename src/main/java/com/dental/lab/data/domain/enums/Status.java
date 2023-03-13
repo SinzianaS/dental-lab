@@ -1,4 +1,4 @@
-package com.dental.lab.data.domain;
+package com.dental.lab.data.domain.enums;
 
 public enum Status {
     IN_PROGRESS("in progress"),
@@ -8,6 +8,11 @@ public enum Status {
 
     Status(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return status;
     }
 
 }
