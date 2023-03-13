@@ -18,7 +18,7 @@ public class TestController {
     public String getSomething() {
         Patient patient= new Patient();
         patient.setName("Test");
-        patientDao.addPatient(patient);
+        //patientDao.addPatient(patient);
         return "Test String";
     }
 }
