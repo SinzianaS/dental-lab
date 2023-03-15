@@ -40,6 +40,8 @@ public abstract class GenericDao<T> {
         return entityManager.find(classOfData, id);
     }
 
+
+
     /**
      * Insert the given object in the database.
      *
@@ -70,6 +72,37 @@ public abstract class GenericDao<T> {
     public T merge(T obj) {
         entityManager.merge(obj);
         return obj;
+    }
+
+    /**
+     * Update the entry in the database. Same as merge();
+     *
+     * @param obj The object to update
+     * @return The updated object
+     */
+    public T update(T obj) {
+        return merge(obj);
+    }
+
+    /**
+     * Hard deletes the object with the given ID from the database, if it exists
+     *
+     * @param id The ID of the object that will be deleted
+     */
+    public void delete(String id) {
+        T obj = entityManager.find(classOfData, id);
+        if (obj != null) {
+            entityManager.remove(obj);
+        }
+    }
+
+    /**
+     * Hard deletes the object from the database
+     *
+     * @param obj The object that will be deleted
+     */
+    public void delete(T obj) {
+        entityManager.remove(entityManager.contains(obj) ? obj : entityManager.merge(obj));
     }
 
 
@@ -109,16 +142,7 @@ public abstract class GenericDao<T> {
         return result;
     }
 
-    /**
-        * Hard deletes the object with the given ID from the database, if it exists
-        * @param id The ID of the object that will be deleted
-        */
-       public void delete(String id) {
-           T obj = entityManager.find(classOfData, id);
-           if (obj != null) {
-               entityManager.remove(obj);
-           }
-       }
+
 
 }
 
