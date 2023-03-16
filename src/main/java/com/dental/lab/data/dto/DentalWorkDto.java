@@ -10,16 +10,11 @@ import lombok.Setter;
 @Setter
 public class DentalWorkDto {
 
-//    Status status;
-//
-//    Type type;
-//
-//    Color color;
+    Status status;
 
-    private String status;
+    Type type;
 
-    private String type;
+    Color color;
 
-    private String color;
 
 }

@@ -23,25 +23,18 @@ public class DentalWork {
     @GeneratedValue(generator = "uuid2")
     private UUID id;
 
-
     @OneToOne
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    Status status;
 
-    private String type;
+    @Enumerated(EnumType.STRING)
+    Type type;
 
-    private String color;
-
-//    @Enumerated(EnumType.STRING)
-//    Status status;
-//
-//    @Enumerated(EnumType.STRING)
-//    Type type;
-//
-//    @Enumerated(EnumType.STRING)
-//    Color color;
+    @Enumerated(EnumType.STRING)
+    Color color;
 
 
 }

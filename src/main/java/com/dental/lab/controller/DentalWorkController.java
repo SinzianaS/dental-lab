@@ -14,11 +14,8 @@ public class DentalWorkController {
 
     private final DentalWorkService dentalWorkService;
 
-
     @GetMapping("/dentalWorks")
     public List<DentalWork> getAllWorks() {
         return dentalWorkService.getAllDentalWorks();
     }
-
-
 }

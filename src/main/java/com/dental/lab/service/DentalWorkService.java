@@ -21,11 +21,11 @@ public class DentalWorkService {
     }
 
 
-    public DentalWork find(UUID id) {
+    public DentalWork findById(UUID id) {
         return dentalWorkDao.find(id);
     }
 
-    public DentalWork addDentalWork(DentalWorkDto dentalWorkDto) {
+    public DentalWork insertDentalWork(DentalWorkDto dentalWorkDto) {
         DentalWork newDentalWork = new DentalWork();
         newDentalWork.setColor(dentalWorkDto.getColor());
         newDentalWork.setType(dentalWorkDto.getType());
