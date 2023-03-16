@@ -17,6 +17,9 @@ public class Dentist {
 
     private String name;
 
+    @Column(name = "clinic")
+    private String clinicName;
+
     private String address;
 
 }

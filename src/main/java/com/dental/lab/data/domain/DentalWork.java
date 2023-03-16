@@ -4,6 +4,7 @@ import com.dental.lab.data.domain.enums.Color;
 import com.dental.lab.data.domain.enums.Status;
 import com.dental.lab.data.domain.enums.Type;
 import lombok.Data;
+import org.hibernate.annotations.TypeDef;
 
 import javax.persistence.*;
 import java.util.UUID;
@@ -11,6 +12,10 @@ import java.util.UUID;
 @Data
 @Entity
 @Table(name = "dental_works")
+@TypeDef(
+    name = "dental_works_status",
+    typeClass = Status.class
+)
 public class DentalWork {
 
     @Id
@@ -23,14 +28,20 @@ public class DentalWork {
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
-    @Enumerated(EnumType.STRING)
-    Status status;
+    private String status;
 
-    @Enumerated(EnumType.STRING)
-    Type type;
+    private String type;
 
-    @Enumerated(EnumType.STRING)
-    Color color;
+    private String color;
+
+//    @Enumerated(EnumType.STRING)
+//    Status status;
+//
+//    @Enumerated(EnumType.STRING)
+//    Type type;
+//
+//    @Enumerated(EnumType.STRING)
+//    Color color;
 
 
 }

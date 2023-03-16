@@ -10,9 +10,25 @@ public enum Status {
         this.status = status;
     }
 
-    @Override
-    public String toString() {
+
+    public String getStatus() {
         return status;
     }
+
+
+    public static Status getByName(String name) {
+        for (Status status : values()) {
+            if (status.getStatus().equals(name)) {
+                return status;
+            }
+        }
+
+        throw new IllegalArgumentException(name + " is not a valid Status");
+    }
+
+//    @Override
+//    public String toString() {
+//        return status;
+//    }
 
 }
