@@ -17,6 +17,8 @@ public class Dentist {
 
     private String name;
 
+    private String clinic;
+
     private String address;
 
 }
