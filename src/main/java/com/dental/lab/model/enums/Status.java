@@ -2,7 +2,7 @@ package com.dental.lab.model.enums;
 
 
 public enum Status {
-    IN_PROGRESS("in progress"),
+    IN_PROGRESS("in_progress"),
     COMPLETED("completed");
 
     private final String status;
