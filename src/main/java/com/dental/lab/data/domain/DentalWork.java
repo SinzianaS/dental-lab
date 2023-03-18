@@ -13,8 +13,8 @@ import java.util.UUID;
 @Entity
 @Table(name = "dental_works")
 @TypeDef(
-    name = "dental_works_status",
-    typeClass = Status.class
+        name = "dental_works_status",
+        typeClass = Status.class
 )
 public class DentalWork {
 

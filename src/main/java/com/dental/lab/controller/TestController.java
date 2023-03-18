@@ -16,7 +16,7 @@ public class TestController {
     @Transactional
     @GetMapping(path = "/getSomething")
     public String getSomething() {
-        Patient patient= new Patient();
+        Patient patient = new Patient();
         patient.setName("Test");
         //patientDao.addPatient(patient);
         return "Test String";

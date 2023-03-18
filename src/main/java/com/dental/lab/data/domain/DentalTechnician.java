@@ -22,9 +22,9 @@ public class DentalTechnician {
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "dental_work_technician_id",
-                joinColumns = {@JoinColumn(name = "dental_technician_id")},
-                inverseJoinColumns = {@JoinColumn(name = "dental_work_id")},
-                foreignKey = @ForeignKey(name = "dental_work_to_technician_fk"),
-                inverseForeignKey = @ForeignKey(name = "technician_to_dental_work_fk"))
+            joinColumns = {@JoinColumn(name = "dental_technician_id")},
+            inverseJoinColumns = {@JoinColumn(name = "dental_work_id")},
+            foreignKey = @ForeignKey(name = "dental_work_to_technician_fk"),
+            inverseForeignKey = @ForeignKey(name = "technician_to_dental_work_fk"))
     private List<DentalWork> dentalWorkList;
 }

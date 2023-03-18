@@ -34,7 +34,6 @@ public abstract class JPAFilter {
     }
 
 
-
     public List<Order> getOrderBy(CriteriaBuilder criteriaBuilder, Root root) {
         if (orderBy.isEmpty()) return Collections.emptyList();
 
@@ -153,7 +152,6 @@ public abstract class JPAFilter {
         Predicate predicate = get(root, field).in(values);
         return predicate;
     }
-
 
 
 }

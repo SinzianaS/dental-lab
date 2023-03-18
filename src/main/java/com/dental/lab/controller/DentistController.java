@@ -32,7 +32,6 @@ public class DentistController {
         return new ResponseEntity<>(dentist, HttpStatus.OK);
     }
 
-    //TO DO
     @PostMapping
     public ResponseEntity<Dentist> createDentist(@RequestBody Dentist dentist) {
         Dentist createdDentist = dentistService.createDentist(dentist);

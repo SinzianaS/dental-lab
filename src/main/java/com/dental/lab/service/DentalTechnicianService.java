@@ -28,7 +28,7 @@ public class DentalTechnicianService {
         return dentalTechnicianDao.merge(dentalTechnician);
     }
 
-    public DentalTechnician updateTechnician(UUID id,DentalTechnician dentalTechnician) {
+    public DentalTechnician updateTechnician(UUID id, DentalTechnician dentalTechnician) {
         return dentalTechnicianDao.merge(dentalTechnician);
     }
 

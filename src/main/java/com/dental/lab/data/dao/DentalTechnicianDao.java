@@ -7,10 +7,10 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 
 @Repository
-public class DentalTechnicianDao extends GenericDao<DentalTechnician>{
+public class DentalTechnicianDao extends GenericDao<DentalTechnician> {
 
     @Autowired
-    public DentalTechnicianDao (EntityManager entityManager) {
+    public DentalTechnicianDao(EntityManager entityManager) {
         super(DentalTechnician.class, entityManager);
     }
 

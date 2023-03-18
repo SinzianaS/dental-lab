@@ -1,7 +1,6 @@
 package com.dental.lab.controller;
 
 import com.dental.lab.data.domain.DentalTechnician;
-import com.dental.lab.data.domain.Dentist;
 import com.dental.lab.service.DentalTechnicianService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

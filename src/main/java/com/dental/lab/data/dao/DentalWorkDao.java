@@ -22,10 +22,12 @@ public class DentalWorkDao extends GenericDao<DentalWork> {
         super(DentalWork.class, entityManager);
     }
 
-    /** Returns a list of DentalWorks filtered by the given Status.
-    *  @param status the Status to filter the DentalWorks by
-    *  @return a list of DentalWorks filtered by the given Status
-    */
+    /**
+     * Returns a list of DentalWorks filtered by the given Status.
+     *
+     * @param status the Status to filter the DentalWorks by
+     * @return a list of DentalWorks filtered by the given Status
+     */
     public List<DentalWork> findDentalWorksByStatus(Status status) {
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
         CriteriaQuery<DentalWork> criteria = builder.createQuery(DentalWork.class);
