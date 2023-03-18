@@ -56,6 +56,6 @@ public class DentistService {
     }
 
     public List<Dentist> getDentistsByClinicName(String clinic) {
-        return dentistDao.findDentistsByClinicName(clinic);
+        return dentistDao.getDentistsByClinicName(clinic);
     }
 }
