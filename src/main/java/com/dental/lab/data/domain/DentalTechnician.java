@@ -1,5 +1,6 @@
 package com.dental.lab.data.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -18,6 +19,7 @@ public class DentalTechnician {
 
     private String technicianName;
 
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "dental_work_technician_id",
                 joinColumns = {@JoinColumn(name = "dental_technician_id")},
