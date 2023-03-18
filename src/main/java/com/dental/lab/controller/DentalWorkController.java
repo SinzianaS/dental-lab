@@ -29,7 +29,6 @@ public class DentalWorkController {
     }
 
     @GetMapping("/id/{id}")
-
     public ResponseEntity<DentalWork> getDentalWorkById(
             @PathVariable UUID id,
             @RequestParam(name = "status", required = false) Status status) {

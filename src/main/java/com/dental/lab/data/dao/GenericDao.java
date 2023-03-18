@@ -42,7 +42,6 @@ public abstract class GenericDao<T> {
     }
 
 
-
     /**
      * Insert the given object in the database.
      *
@@ -143,6 +142,16 @@ public abstract class GenericDao<T> {
         return result;
     }
 
+
+    public List<T> getByAddress(String address) {
+        JPAFilter filter = new JPAFilter() {
+            @Override
+            public Predicate getPredicate(CriteriaBuilder criteriaBuilder, Root root) {
+                return criteriaBuilder.equal(root.get("address"), address);
+            }
+        };
+        return get(filter);
+    }
 
 
 }
