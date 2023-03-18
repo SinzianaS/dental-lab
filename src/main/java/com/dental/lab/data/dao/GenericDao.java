@@ -9,6 +9,7 @@ import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.*;
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 public abstract class GenericDao<T> {
@@ -89,7 +90,7 @@ public abstract class GenericDao<T> {
      *
      * @param id The ID of the object that will be deleted
      */
-    public void delete(String id) {
+    public void delete(UUID id) {
         T obj = entityManager.find(classOfData, id);
         if (obj != null) {
             entityManager.remove(obj);

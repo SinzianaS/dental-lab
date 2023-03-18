@@ -20,7 +20,7 @@ public class DentalWork {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(generator = "uuid2")
+    //@GeneratedValue(generator = "uuid2")
     private UUID id;
 
     @OneToOne

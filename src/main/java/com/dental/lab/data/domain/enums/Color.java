@@ -28,4 +28,18 @@ public enum Color {
     public String toString() {
         return color;
     }
+
+    public String getColor() {
+        return color;
+    }
+
+    public static Color getByName(String name) {
+        for (Color color : values()) {
+            if (color.getColor().equals(name)) {
+                return color;
+            }
+        }
+
+        throw new IllegalArgumentException(name + " is not a valid Status");
+    }
 }

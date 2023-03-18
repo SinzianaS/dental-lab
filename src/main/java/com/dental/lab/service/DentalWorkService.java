@@ -2,37 +2,62 @@ package com.dental.lab.service;
 
 import com.dental.lab.data.dao.DentalWorkDao;
 import com.dental.lab.data.domain.DentalWork;
-import com.dental.lab.data.dto.DentalWorkDto;
-import lombok.RequiredArgsConstructor;
+import com.dental.lab.data.domain.enums.Color;
+import com.dental.lab.data.domain.enums.Status;
+import com.dental.lab.data.domain.enums.Type;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 
+
 @Service
-@RequiredArgsConstructor
 public class DentalWorkService {
 
     private final DentalWorkDao dentalWorkDao;
 
-    public List<DentalWork> getAllDentalWorks(){
-        List<DentalWork> dentalWorkList = dentalWorkDao.getAll();
-        return dentalWorkList;
+    public DentalWorkService(DentalWorkDao dentalWorksDAO) {
+        this.dentalWorkDao = dentalWorksDAO;
     }
 
 
-    public DentalWork findById(UUID id) {
+    public List<DentalWork> getAllDentalWorks() {
+        return dentalWorkDao.getAll();
+    }
+
+
+    public DentalWork getDentalWorkById(UUID id) {
         return dentalWorkDao.find(id);
     }
 
-    public DentalWork insertDentalWork(DentalWorkDto dentalWorkDto) {
-        DentalWork newDentalWork = new DentalWork();
-        newDentalWork.setColor(dentalWorkDto.getColor());
-        newDentalWork.setType(dentalWorkDto.getType());
-        newDentalWork.setStatus(dentalWorkDto.getStatus());
 
-        return dentalWorkDao.insert(newDentalWork);
+    public void saveDentalWork(DentalWork dentalWork) {
+        dentalWorkDao.insert(dentalWork);
     }
 
 
+    public void deleteDentalWorkById(UUID id) {
+        dentalWorkDao.delete(id);
+    }
+
+    /**
+     * Find all dental works that match the specified status.
+     *
+     * @param status the status of the dental works to find
+     * @return a list of dental works that match the specified status
+     */
+
+    public List<DentalWork> getDentalWorksByStatus(Status status) {
+        return dentalWorkDao.findDentalWorksByStatus(status);
+    }
+
+
+    public List<DentalWork> getDentalWorksByType(Type type) {
+        return dentalWorkDao.findDentalWorksByType(type);
+    }
+
+
+    public List<DentalWork> getDentalWorksByColor(Color color) {
+        return dentalWorkDao.findDentalWorksByColor(color);
+    }
 }

@@ -26,9 +26,5 @@ public enum Status {
         throw new IllegalArgumentException(name + " is not a valid Status");
     }
 
-//    @Override
-//    public String toString() {
-//        return status;
-//    }
 
 }
