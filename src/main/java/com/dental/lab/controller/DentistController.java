@@ -5,6 +5,7 @@ import com.dental.lab.service.DentistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
@@ -33,12 +34,14 @@ public class DentistController {
     }
 
     @PostMapping
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<Dentist> createDentist(@RequestBody Dentist dentist) {
         Dentist createdDentist = dentistService.createDentist(dentist);
         return new ResponseEntity<>(createdDentist, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<Dentist> updateDentistById(@PathVariable("id") UUID id, @RequestBody Dentist updatedDentist) {
         Dentist dentist = dentistService.updateDentist(id, updatedDentist);
         if (dentist == null) {
@@ -48,6 +51,7 @@ public class DentistController {
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteDentist(@PathVariable("id") UUID id) {
         dentistService.deleteDentist(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);

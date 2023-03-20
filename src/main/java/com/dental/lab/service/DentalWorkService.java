@@ -35,6 +35,11 @@ public class DentalWorkService {
         dentalWorkDao.insert(dentalWork);
     }
 
+    public DentalWork updateDentalWork(UUID id, DentalWork dentalWork) {
+        return dentalWorkDao.merge(dentalWork);
+
+    }
+
 
     public void deleteDentalWorkById(UUID id) {
         dentalWorkDao.delete(id);

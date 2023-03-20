@@ -1,12 +1,15 @@
 package com.dental.lab.controller;
 
 import com.dental.lab.data.domain.DentalWork;
+import com.dental.lab.data.domain.Dentist;
 import com.dental.lab.data.domain.enums.Color;
 import com.dental.lab.data.domain.enums.Status;
 import com.dental.lab.data.domain.enums.Type;
 import com.dental.lab.service.DentalWorkService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -16,7 +19,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/dental-works")
+@RequestMapping("api/dental-works")
 @RequiredArgsConstructor
 @Transactional
 public class DentalWorkController {
@@ -40,6 +43,7 @@ public class DentalWorkController {
     }
 
     @PostMapping
+    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
     public ResponseEntity<Void> saveDentalWork(@RequestBody DentalWork dentalWork) {
         dentalWorkService.saveDentalWork(dentalWork);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
@@ -50,6 +54,7 @@ public class DentalWorkController {
     }
 
     @DeleteMapping("/id/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> deleteDentalWorkById(@PathVariable UUID id) {
         dentalWorkService.deleteDentalWorkById(id);
         return ResponseEntity.noContent().build();
@@ -86,4 +91,17 @@ public class DentalWorkController {
         return ResponseEntity.ok(dentalWorks);
     }
 
+
+    @PutMapping("/id/{id}")
+    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
+    public ResponseEntity<DentalWork> updateDentalWorkById(@PathVariable("id") UUID id,
+                                                           @RequestBody DentalWork updatedDentalWork) {
+        DentalWork dentalWork = dentalWorkService.updateDentalWork(id, updatedDentalWork);
+        if (dentalWork == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(dentalWork, HttpStatus.OK);
+    }
 }
+
+
