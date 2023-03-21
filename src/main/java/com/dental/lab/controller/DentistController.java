@@ -14,6 +14,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/dentists")
+@CrossOrigin(origins = "http://localhost:3000")
 @Transactional
 public class DentistController {
 
