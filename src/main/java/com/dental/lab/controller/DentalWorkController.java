@@ -19,8 +19,9 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("api/dental-works")
 @RequiredArgsConstructor
+@RequestMapping("api/dental-works")
+@CrossOrigin(origins = "http://localhost:3000")
 @Transactional
 public class DentalWorkController {
 
