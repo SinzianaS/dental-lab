@@ -20,7 +20,7 @@ public class Patient {
 
     private int age;
 
-    //@JsonIgnore
+    @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL)
     private Dentist dentist;
 

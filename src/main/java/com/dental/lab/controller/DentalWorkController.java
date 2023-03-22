@@ -36,6 +36,7 @@ public class DentalWorkController {
     public ResponseEntity<DentalWork> getDentalWorkById(
             @PathVariable UUID id,
             @RequestParam(name = "status", required = false) Status status) {
+        String idString = id.toString();
         DentalWork dentalWork = dentalWorkService.getDentalWorkById(id);
         if (dentalWork != null) {
             return ResponseEntity.ok(dentalWork);
