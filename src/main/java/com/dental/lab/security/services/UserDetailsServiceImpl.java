@@ -1,7 +1,7 @@
 package com.dental.lab.security.services;
 
-import com.dental.lab.data.domain.User;
 import com.dental.lab.data.dao.UserDao;
+import com.dental.lab.data.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

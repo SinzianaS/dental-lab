@@ -20,7 +20,8 @@ public enum Color {
     BL4("bl4");
 
     private String color;
-    Color(String color){
+
+    Color(String color) {
         this.color = color;
     }
 

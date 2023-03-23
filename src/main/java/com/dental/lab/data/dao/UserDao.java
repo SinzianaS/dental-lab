@@ -1,10 +1,10 @@
 package com.dental.lab.data.dao;
 
-import java.util.Optional;
-
 import com.dental.lab.data.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
 
 
 @Repository

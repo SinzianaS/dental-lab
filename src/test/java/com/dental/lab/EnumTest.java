@@ -10,8 +10,8 @@ public class EnumTest {
 
     @Test
     void givenCustomName_whenUsingGetByUpperCaseName_thenReturnEnumConstant() {
-        assertEquals(Status.COMPLETED,StatusUtils.getByUpperCaseName("completed"));
+        assertEquals(Status.COMPLETED, StatusUtils.getByUpperCaseName("completed"));
 
-        assertEquals(Status.IN_PROGRESS,StatusUtils.getByUpperCaseName("in_progress"));
+        assertEquals(Status.IN_PROGRESS, StatusUtils.getByUpperCaseName("in_progress"));
     }
 }

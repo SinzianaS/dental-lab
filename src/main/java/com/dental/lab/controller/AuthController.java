@@ -8,8 +8,6 @@ import com.dental.lab.payload.request.LoginRequest;
 import com.dental.lab.payload.request.SignupRequest;
 import com.dental.lab.payload.response.JwtResponse;
 import com.dental.lab.payload.response.MessageResponse;
-import com.dental.lab.data.dao.RoleDao;
-import com.dental.lab.data.dao.UserDao;
 import com.dental.lab.security.jwt.JwtUtils;
 import com.dental.lab.security.services.UserDetailsImpl;
 import com.dental.lab.service.RoleService;

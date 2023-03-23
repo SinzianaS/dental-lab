@@ -1,7 +1,6 @@
 package com.dental.lab.controller;
 
 import com.dental.lab.data.domain.DentalWork;
-import com.dental.lab.data.domain.Dentist;
 import com.dental.lab.data.domain.enums.Color;
 import com.dental.lab.data.domain.enums.Status;
 import com.dental.lab.data.domain.enums.Type;

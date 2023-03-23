@@ -1,6 +1,5 @@
 package com.dental.lab.data.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -20,14 +19,15 @@ public class Patient {
 
     private int age;
 
-    @JsonIgnore
+    //@JsonIgnore
     @OneToOne(cascade = CascadeType.ALL)
     private Dentist dentist;
 
     public Patient(String name) {
         this.name = name;
     }
-    public Patient(){
+
+    public Patient() {
 
     }
 
