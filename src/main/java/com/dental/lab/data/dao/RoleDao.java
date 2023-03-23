@@ -1,4 +1,4 @@
-package com.dental.lab.repository;
+package com.dental.lab.data.dao;
 
 import com.dental.lab.data.domain.Role;
 import com.dental.lab.data.domain.enums.RoleEnum;
@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface RoleRepository extends JpaRepository<Role, Long> {
+public interface RoleDao extends JpaRepository<Role, Long> {
 	Optional<Role> findByName(RoleEnum name);
 }

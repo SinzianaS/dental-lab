@@ -24,4 +24,11 @@ public class Patient {
     @OneToOne(cascade = CascadeType.ALL)
     private Dentist dentist;
 
+    public Patient(String name) {
+        this.name = name;
+    }
+    public Patient(){
+
+    }
+
 }

@@ -56,7 +56,7 @@ public class DentalWorkController {
     }
 
     @DeleteMapping("/id/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<Void> deleteDentalWorkById(@PathVariable UUID id) {
         dentalWorkService.deleteDentalWorkById(id);
         return ResponseEntity.noContent().build();
