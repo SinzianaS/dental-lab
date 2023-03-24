@@ -1,4 +1,4 @@
-Dental Lab Management Application Backend
+# Dental Lab Management Application Backend
 
 This is a backend application for a dental lab management system written in Java, using Spring Boot, Spring Data, Hibernate, Spring Web, PostgreSQL, and JWT token authentication. It can perform CRUD (Create, Read, Update, and Delete) operations, as well as other endpoints.
 
