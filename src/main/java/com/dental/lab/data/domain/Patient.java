@@ -19,8 +19,7 @@ public class Patient {
 
     private int age;
 
-    //@JsonIgnore
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     private Dentist dentist;
 
     public Patient(String name) {
